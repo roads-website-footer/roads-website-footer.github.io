@@ -2,13 +2,35 @@
   <body>
     <script defer src="./element.js"></script>
 
+    <b>Opdract:</b> Maak in de HTML &lt;template> (in deze index.html) alle CSS
+    + HTML voor een generieke Footer die op alle Roads Social Firmas komt
+
+    <hr />
+
     <template id="ROADS-WEBSITE-FOOTER">
-      <div>Site Copyright - extract from URL with JavaScript</div>
-      <div>Roads Privacy Links</div>
+      <style>
+        :host{
+            clear:both;
+            width:100%;
+        }
+        div{
+            padding: 1em 0 1em 0;
+        }
+      </style>
+      <hr />
+      <!-- Site Copyright - extract from URL with JavaScript -->
+      <div>
+        Copyright <span id="year"><!-- automatisch jaar --></span>
+        <span id="socialFirmaName"><!-- volledige naam social firma --></span>
+      </div>
+
+      <!-- standard Roads Privacy Links & contact webteam@roads-technology.nl -->
+      <div>Standaard Roads Privacy Links</div>
+
+      <!-- Logos van social firmas -->
       <div>Other Social Firmas</div>
     </template>
 
     <roads-website-footer></roads-website-footer>
-    
   </body>
 </html>
