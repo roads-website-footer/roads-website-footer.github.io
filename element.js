@@ -45,6 +45,7 @@ customElements.define(
           break;
           case "roads-website-footer.github.io":
                 el.innerText = "Roads Website Footer Co.";
+          break;
           default:
                 el.innerText = "";
         }
