@@ -20,19 +20,13 @@ customElements.define(
     setPrivacyLinks() {
       var links = ["Algemene Voorwaarden", "Privacyregelement", "Disclaimer"];
       var displayElements = '<ul>';
-      var count = 0;
 
       links.forEach(function(link) {
           displayElements += '<li>'+ link + '</li>';
-          count = count + 1;
-      }); 
-      if(count >=3) {
-        displayElements += '</ul>';
-        console.log(displayElements, count);
-        this.$("standartPrivacyLinksContainer").forEach(el => {
-          el.innerText = displayElements;
-        })
-      }
+      })
+      displayElements += '</ul>';
+      console.log(displayElements, count);
+      this.$("standartPrivacyLinksContainer").append(displayElements);
     }
 
     setSocialFirmaName() {
