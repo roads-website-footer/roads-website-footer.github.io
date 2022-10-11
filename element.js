@@ -19,15 +19,16 @@ customElements.define(
     }
 
     setSocialFirmaLogosAndInfo(){
+      var dir = "https://raw.githubusercontent.com/roads-website-footer/roads-website-footer.github.io/9169f15251f0669cee9a35cc5eaff1ae9090a4b6";
       var imgArray = new Array();
-      imgArray[0] = './img/appeltaart.png';
-      imgArray[1] = './img/houtstek.png';
-      imgArray[2] = './img/printandpixels.jpg';
-      imgArray[3] = './img/recycle.jpg';
-      imgArray[4] = './img/restaurantfreud.png';
-      imgArray[5] = './img/roadstechnology.jpg';
-      imgArray[6] = './img/roadsvervoer.jpg';
-      imgArray[7] = './img/zeefdrukmakers.jpg';
+      imgArray[0] = dir + '/img/appeltaart.png';
+      imgArray[1] = dir + '/img/houtstek.png';
+      imgArray[2] = dir + '/img/printandpixels.jpg';
+      imgArray[3] = dir + '/img/recycle.jpg';
+      imgArray[4] = dir + '/img/restaurantfreud.png';
+      imgArray[5] = dir + '/img/roadstechnology.jpg';
+      imgArray[6] = dir + '/img/roadsvervoer.jpg';
+      imgArray[7] = dir + '/img/zeefdrukmakers.jpg';
       var displayImages = '<ul>';
       console.log(imgArray);
       imgArray.forEach( (img) => {
