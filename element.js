@@ -32,7 +32,7 @@ customElements.define(
       var displayImages = '<ul>';
       console.log(imgArray);
       imgArray.forEach( (img) => {
-        displayImages += "<li>" + "<img src=" + img + "/>" + "</li>";
+        displayImages += "<a href='#'> <li>" + "<img src=" + img + "/>" + "</li></a>";
       })
       displayImages += '</ul>';
       console.log(displayImages);
@@ -47,7 +47,7 @@ customElements.define(
       var displayElements = '<ul>';
 
       links.forEach(function(link) {
-          displayElements += '<li>'+ link + '</li>';
+          displayElements += '<a href="#"> <li>'+ link + '</li> </a>';
       })
       displayElements += '</ul>';
       /* console.log(displayElements); */
