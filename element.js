@@ -37,8 +37,9 @@ customElements.define(
       imgArray[7] = new Image();
       imgArray[7].src = './img/zeefdrukmakers.jpg';
       var displayImages = '<ul>';
+      console.log(imgArray);
       imgArray.forEach( (img) => {
-        displayImages += img;
+        displayImages += <li> + img </li>;
       })
       displayImages += '</ul>';
       console.log(displayImages);
@@ -56,7 +57,7 @@ customElements.define(
           displayElements += '<li>'+ link + '</li>';
       })
       displayElements += '</ul>';
-      console.log(displayElements);
+      /* console.log(displayElements); */
       this.$("#standartPrivacyLinksContainer").forEach(el => {
         el.innerHTML = displayElements;
       });
