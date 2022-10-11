@@ -28,7 +28,7 @@ customElements.define(
       displayElements += '</ul>';
 
       this.$("standartPrivacyLinksContainer").forEach(el => {
-        el.innerHTML = displayElements;
+        el.innerText = displayElements;
       })
     }
 
