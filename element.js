@@ -17,8 +17,35 @@ customElements.define(
     }
 
     setSocialFirmaName() {
-      this.$("#socialFirmaName").forEach(el=>{
-        el.innerText = "Get from URL";
+      this.$("#socialFirmaName").forEach( el => {
+        switch(location.host) {
+          case "restaurantfreud.nl": 
+                el.innerText = "Restaurant Freud";
+          break;
+          case "zeefdrukmakers.nl":
+                el.innerText = "Zeefdrukmakers";
+          break;
+          case "roadsvervoer.nl":
+                el.innerText = "Roads Vervoer";
+          break;
+          case "roads-technology.nl":
+                el.innerText = "Roads Technology";
+          break;
+          case "houtstek.nl":
+                el.innerText = "Houtstek";
+          break;
+          case "appeltaartimperium.nl":
+                el.innerText = "Appeltaart Imperium";
+          break;
+          case "roadsprintenpixels.nl":
+                el.innerText = "Roads Print and Pixels";
+          break;
+          case "recyclefietsen.nl":
+                el.innerText = "Re Cycle"
+          break;
+          defalut:
+                el.innerText = "";
+        }
       });
     }
 
