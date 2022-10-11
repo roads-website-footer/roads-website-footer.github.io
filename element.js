@@ -43,7 +43,7 @@ customElements.define(
           case "recyclefietsen.nl":
                 el.innerText = "Re Cycle"
           break;
-          defalut:
+          default:
                 el.innerText = "";
         }
       });
