@@ -20,26 +20,18 @@ customElements.define(
 
     setSocialFirmaLogosAndInfo(){
       var imgArray = new Array();
-      imgArray[0] = new Image();
-      imgArray[0].src = './img/appeltaart.png';
-      imgArray[1] = new Image();
-      imgArray[1].src = './img/houtstek.png';
-      imgArray[2] = new Image();
-      imgArray[2].src = './img/printandpixels.jpg';
-      imgArray[3] = new Image();
-      imgArray[3].src = './img/recycle.jpg';
-      imgArray[4] = new Image();
-      imgArray[4].src = './img/restaurantfreud.png';
-      imgArray[5] = new Image();
-      imgArray[5].src = './img/roadstechnology.jpg';
-      imgArray[6] = new Image();
-      imgArray[6].src = './img/roadsvervoer.jpg';
-      imgArray[7] = new Image();
-      imgArray[7].src = './img/zeefdrukmakers.jpg';
+      imgArray[0] = './img/appeltaart.png';
+      imgArray[1] = './img/houtstek.png';
+      imgArray[2] = './img/printandpixels.jpg';
+      imgArray[3] = './img/recycle.jpg';
+      imgArray[4] = './img/restaurantfreud.png';
+      imgArray[5] = './img/roadstechnology.jpg';
+      imgArray[6] = './img/roadsvervoer.jpg';
+      imgArray[7] = './img/zeefdrukmakers.jpg';
       var displayImages = '<ul>';
       console.log(imgArray);
       imgArray.forEach( (img) => {
-        displayImages += "<li>" + img + "</li>";
+        displayImages += "<li>" + "<img src=" + img + "/>" + "</li>";
       })
       displayImages += '</ul>';
       console.log(displayImages);
