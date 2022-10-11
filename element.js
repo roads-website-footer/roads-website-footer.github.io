@@ -25,7 +25,7 @@ customElements.define(
           displayElements += '<li>'+ link + '</li>';
       })
       displayElements += '</ul>';
-      console.log(displayElements, count);
+      console.log(displayElements);
       this.$("standartPrivacyLinksContainer").append(displayElements);
     }
 
