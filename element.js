@@ -47,6 +47,7 @@ customElements.define(
                 el.innerText = "Roads Website Footer Co.";
           break;
           default:
+                print(location.host);
                 el.innerText = "";
         }
       });
