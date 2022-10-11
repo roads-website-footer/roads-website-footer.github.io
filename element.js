@@ -18,7 +18,15 @@ customElements.define(
     }
 
     setPrivacyLinks() {
-        this.getElementById("standartPrivacyLinks").innerHTML = "<li>Algemene Voorwaarden</li><li>Privacyregelement</li><li>Disclaimer</li>";
+      var links = ["Algemene Voorwaarden", "Privacyregelement", "Disclaimer"];
+      var displayElements = '<ul>';
+
+      links.forEach(function(link) {
+          displayElements += '<li>'+ link + '</li>';
+      }); 
+
+      displayElements += '</ul>';
+        this.getElementById("standartPrivacyLinksContainer").innerHTML = displayElements;
     }
 
     setSocialFirmaName() {
