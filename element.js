@@ -39,7 +39,7 @@ customElements.define(
       var displayImages = '<ul>';
       console.log(imgArray);
       imgArray.forEach( (img) => {
-        displayImages += <li> + img </li>;
+        displayImages += "<li>" + img + "</li>";
       })
       displayImages += '</ul>';
       console.log(displayImages);
