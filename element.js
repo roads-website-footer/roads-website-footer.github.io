@@ -14,11 +14,15 @@ customElements.define(
 
     connectedCallback() {
       this.setSocialFirmaName();
+      this.setPrivacyLinks();
+    }
+
+    setPrivacyLinks() {
+        this.getElementById("standartPrivacyLinks").innerHTML = "<li>Algemene Voorwaarden</li><li>Privacyregelement</li><li>Disclaimer</li>";
     }
 
     setSocialFirmaName() {
       this.$("#socialFirmaName").forEach( el => {
-        console.log(location.host);
         switch(location.host) {
           case "restaurantfreud.nl": 
                 el.innerText = "Restaurant Freud";

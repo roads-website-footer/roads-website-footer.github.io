@@ -1,4 +1,5 @@
 <html>
+
   <body>
     <script defer src="./element.js"></script>
 
@@ -13,24 +14,35 @@
             clear:both;
             width:100%;
         }
-        div{
+        #footerContainer{
             padding: 1em 0 1em 0;
         }
       </style>
-      <hr />
+    <hr />
+
+
       <!-- Site Copyright - extract from URL with JavaScript -->
-      <div>
-        Copyright <span id="year"><!-- automatisch jaar --></span>
-        <span id="socialFirmaName"><!-- volledige naam social firma --></span>
+      <div id = "footerContainer">
+
+        <div id="copyrightContainer">
+          Copyright <span id="year"><!-- automatisch jaar --></span>
+          <span id="socialFirmaName"><!-- volledige naam social firma --></span>
+        </div>
+        
+        <!-- standard Roads Privacy Links & contact webteam@roads-technology.nl -->
+        <div id = "standartPrivacyLinksContainer"> 
+          <ul id = "standartPrivacyLinks">
+            <li> </li>
+          </ul>
+        </div>
+
+        <!-- Logos van social firmas -->
+        <div id="otherSocialFirmas">Other Social Firmas</div>
+
       </div>
-
-      <!-- standard Roads Privacy Links & contact webteam@roads-technology.nl -->
-      <div>Standaard Roads Privacy Links</div>
-
-      <!-- Logos van social firmas -->
-      <div>Other Social Firmas</div>
     </template>
 
     <roads-website-footer></roads-website-footer>
   </body>
+
 </html>
