@@ -18,6 +18,7 @@ customElements.define(
 
     setSocialFirmaName() {
       this.$("#socialFirmaName").forEach( el => {
+        console.log(location.host);
         switch(location.host) {
           case "restaurantfreud.nl": 
                 el.innerText = "Restaurant Freud";
@@ -47,7 +48,6 @@ customElements.define(
                 el.innerText = "Roads Website Footer Co.";
           break;
           default:
-                console.log(location.host);
                 el.innerText = "";
         }
       });
