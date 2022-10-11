@@ -19,7 +19,7 @@ customElements.define(
     }
 
     setSocialFirmaLogosAndInfo(){
-      var dir = "https://raw.githubusercontent.com/roads-website-footer/roads-website-footer.github.io/9169f15251f0669cee9a35cc5eaff1ae9090a4b6";
+      var dir = "roads-website-footer.github.io";
       var imgArray = new Array();
       imgArray[0] = dir + '/img/appeltaart.png';
       imgArray[1] = dir + '/img/houtstek.png';
