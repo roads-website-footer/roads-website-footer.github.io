@@ -55,7 +55,7 @@ customElements.define(
       var displayElements = '<ul>';
 
       links.forEach(function(link) {
-          displayElements += '<a href="' + location.host + '/' + link[1] + '"><li>'+ link[0] + '</li> </a>';
+          displayElements += '<a href="' + '/' + link[1] + '"><li>'+ link[0] + '</li> </a>';
       })
       displayElements += '</ul>';
       /* console.log(displayElements); */
