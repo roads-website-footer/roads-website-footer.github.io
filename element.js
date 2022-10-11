@@ -19,7 +19,6 @@ customElements.define(
 
     setPrivacyLinks() {
       var links = ["Algemene Voorwaarden", "Privacyregelement", "Disclaimer"];
-      this.$("standartPrivacyLinksList").appendChild(document.createElement("li"));
       var displayElements = '<ul>';
 
       links.forEach(function(link) {
