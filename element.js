@@ -16,6 +16,14 @@ customElements.define(
       this.setSocialFirmaName();
       this.setPrivacyLinks();
       this.setSocialFirmaLogosAndInfo();
+      this.setCurrentYear();
+    }
+
+    setCurrentYear(){
+      var currentYear = new Date().getFullYear();
+      this.$("#year").forEach( el => {
+        el.innerText = currentYear;
+      })
     }
 
     setSocialFirmaLogosAndInfo(){
