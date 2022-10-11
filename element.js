@@ -51,11 +51,11 @@ customElements.define(
 
 
     setPrivacyLinks() {
-      var links = [["Algemene Voorwaarden"]["algemene-voorwaarden"], ["Privacyregelement"]["privacyregelement"], ["Disclaimer"]["disclaimer"]];
+      var links = [["Algemene Voorwaarden","algemene-voorwaarden"], ["Privacyregelement","privacyregelement"], ["Disclaimer","disclaimer"]];
       var displayElements = '<ul>';
 
       links.forEach(function(link) {
-          displayElements += '<a href="' + location.host + '/' + link[0][1] + '"><li>'+ link[0][0] + '</li> </a>';
+          displayElements += '<a href="' + location.host + '/' + link[1] + '"><li>'+ link[0] + '</li> </a>';
       })
       displayElements += '</ul>';
       /* console.log(displayElements); */
