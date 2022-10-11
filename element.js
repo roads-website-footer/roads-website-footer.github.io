@@ -29,7 +29,7 @@ customElements.define(
 
       displayElements += '</ul>';
       console.log(displayElements, count);
-      while(count >=3) {
+      if(count >=3) {
         this.$("standartPrivacyLinksContainer").forEach(el => {
           el.innerText = displayElements;
         })
