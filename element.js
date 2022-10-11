@@ -26,7 +26,7 @@ customElements.define(
       }); 
 
       displayElements += '</ul>';
-        this.getElementById("standartPrivacyLinksContainer").innerHTML = displayElements;
+        document.getElementById("standartPrivacyLinksContainer").innerHTML = displayElements;
     }
 
     setSocialFirmaName() {
