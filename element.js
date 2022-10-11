@@ -29,6 +29,8 @@ customElements.define(
     setSocialFirmaLogosAndInfo(){
       var dir = "roads-website-footer.github.io";
       var imgArray = new Array();
+      var displayImages = '<ul>';
+
       imgArray[0] = dir + '/img/appeltaart.png';
       imgArray[1] = dir + '/img/houtstek.png';
       imgArray[2] = dir + '/img/printandpixels.jpg';
@@ -37,11 +39,21 @@ customElements.define(
       imgArray[5] = dir + '/img/roadstechnology.jpg';
       imgArray[6] = dir + '/img/roadsvervoer.jpg';
       imgArray[7] = dir + '/img/zeefdrukmakers.jpg';
-      var displayImages = '<ul>';
-      console.log(imgArray);
+
+      imgArray.forEach( (img) => {
+        fetch(img).then(function(response) {
+          return response.json();
+        }).then(function(data) {
+          displayImages += "<a href='#'> <li>" + data + "</li></a>";
+        }).catch(function() {
+          console.log("Booo");
+        });
+      })
+
+      /*console.log(imgArray);
       imgArray.forEach( (img) => {
         displayImages += "<a href='#'> <li>" + "<img src=" + img + ">" + "</li></a>";
-      })
+      })*/
       displayImages += '</ul>';
       console.log(displayImages);
       this.$("#otherSocialFirmas").forEach(el => {
