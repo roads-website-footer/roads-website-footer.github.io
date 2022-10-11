@@ -41,6 +41,7 @@ customElements.define(
         displayImages += img;
       })
       displayImages += '</ul>';
+      console.log(displayImages);
       this.$("#otherSocialFirmas").forEach(el => {
         el.innerHTML = displayImages;
       });
