@@ -41,6 +41,13 @@ customElements.define(
       imgArray[7] = dir + '/img/zeefdrukmakers.jpg';
 
       imgArray.forEach( (img) => {
+        fetch(img)
+        .then(res=>{return res.blob()})
+        .then(blob=>{
+        var image = URL.createObjectURL(blob);
+        document.getElementById('image').setAttribute('src', image);
+      })
+
         fetch(img).then(function(response) {
           return response.json();
         }).then(function(data) {
