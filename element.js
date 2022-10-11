@@ -19,14 +19,15 @@ customElements.define(
 
     setPrivacyLinks() {
       var links = ["Algemene Voorwaarden", "Privacyregelement", "Disclaimer"];
+      this.$("standartPrivacyLinksList").appendChild(document.createElement("li"));
+      var displayElements = '<ul>';
 
       links.forEach(function(link) {
-        const node = document.createElement("li");
-        const textnode = document.createTextNode(link);
-        node.appendChild(textnode);
-        this.$("standartPrivacyLinksList").appendChild(node);
+          displayElements += '<li>'+ link + '</li>';
       })
-      console.log(this.$("standartPrivacyLinksList"));
+      displayElements += '</ul>';
+      console.log(displayElements);
+      this.$("#standartPrivacyLinksContainer").append(displayElements);
     }
 
     setSocialFirmaName() {
