@@ -27,9 +27,7 @@ customElements.define(
 
       displayElements += '</ul>';
       console.log(displayElements);
-      this.$("standartPrivacyLinksContainer").forEach(el => {
-        el.innerText = displayElements;
-      })
+      this.$("standartPrivacyLinksContainer").append(displayElements)
     }
 
     setSocialFirmaName() {
