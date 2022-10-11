@@ -26,7 +26,10 @@ customElements.define(
       }); 
 
       displayElements += '</ul>';
-        document.getElementById("standartPrivacyLinksContainer").innerHTML = displayElements;
+
+      this.$("standartPrivacyLinksContainer").forEach(el => {
+        el.innerHTML = displayElements;
+      })
     }
 
     setSocialFirmaName() {
