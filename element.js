@@ -8,116 +8,74 @@ customElements.define(
         .append(document.getElementById(this.nodeName).content.cloneNode(true));
     }
 
-    $(selector){
+    $(selector) {
       return [...this.shadowRoot.querySelectorAll(selector)]; // return all DOM elements as Array
     }
 
     connectedCallback() {
-      this.setSocialFirmaName();
+      this.setCopyright();
       this.setPrivacyLinks();
       this.setSocialFirmaLogosAndInfo();
-      this.setCurrentYear();
     }
 
-    setCurrentYear(){
-      var currentYear = new Date().getFullYear();
-      this.$("#year").forEach( el => {
-        el.innerText = currentYear;
-      })
+    getCurrentYear() {
+      return new Date().getFullYear();
     }
 
-    setSocialFirmaLogosAndInfo(){
-      var dir = "roads-website-footer.github.io";
-      var imgArray = new Array();
-      var displayImages = '<ul>';
+    getSocialFirmaName() {
+      switch (location.host) {
+        case "restaurantfreud.nl": return "Restaurant Freud";
+        case "zeefdrukmakers.nl": return "Zeefdrukmakers";
+        case "roadsvervoer.nl": return "Roads Vervoer";
+        case "roads-technology.nl": return "Roads Technology";
+        case "houtstek.nl": return "Houtstek";
+        case "appeltaartimperium.nl": return "Appeltaart Imperium";
+        case "roadsprintenpixels.nl": return "Roads Print and Pixels";
+        case "recyclefietsen.nl": return "Re Cycle"
+        case "roads-website-footer.github.io": return "Roads Website Footer Co.";
+        default:
+          return "Roads Technology";
+      }
+    }
 
-      imgArray[0] = dir + '/img/appeltaart.png';
-      imgArray[1] = dir + '/img/houtstek.png';
-      imgArray[2] = dir + '/img/printandpixels.jpg';
-      imgArray[3] = dir + '/img/recycle.jpg';
-      imgArray[4] = dir + '/img/restaurantfreud.png';
-      imgArray[5] = dir + '/img/roadstechnology.jpg';
-      imgArray[6] = dir + '/img/roadsvervoer.jpg';
-      imgArray[7] = dir + '/img/zeefdrukmakers.jpg';
-
-      imgArray.forEach( (img) => {
-        fetch(img)
-        .then(res=>{return res.blob()})
-        .then(blob=>{
-        var image = URL.createObjectURL(blob);
-        document.getElementById('image').setAttribute('src', image);
-      })
-
-        fetch(img).then(function(response) {
-          return response.json();
-        }).then(function(data) {
-          displayImages += "<a href='#'> <li>" + data + "</li></a>";
-        }).catch(function() {
-          console.log("Booo");
-        });
-      })
-
-      /*console.log(imgArray);
-      imgArray.forEach( (img) => {
-        displayImages += "<a href='#'> <li>" + "<img src=" + img + ">" + "</li></a>";
-      })*/
-      displayImages += '</ul>';
-      console.log(displayImages);
-      this.$("#otherSocialFirmas").forEach(el => {
-        el.innerHTML = displayImages;
+    setCopyright() {
+      this.$("#copyrightContainer").forEach(el => {
+        el.innerHTML = `Copyright &#xA9; ${this.getCurrentYear()} ${this.getSocialFirmaName()}`;
       });
     }
-
 
     setPrivacyLinks() {
-      var links = [["Algemene Voorwaarden","algemene-voorwaarden"], ["Privacyregelement","privacyregelement"], ["Disclaimer","disclaimer"]];
-      var displayElements = '<ul>';
+      const links = [
+        ["Algemene Voorwaarden", "algemene-voorwaarden"],
+        ["Privacyregelement", "privacyregelement"],
+        ["Disclaimer", "disclaimer"]
+      ];
 
-      links.forEach(function(link) {
-          displayElements += '<a href="' + '/' + link[1] + '"><li>'+ link[0] + '</li> </a>';
-      })
-      displayElements += '</ul>';
-      /* console.log(displayElements); */
-      this.$("#standartPrivacyLinksContainer").forEach(el => {
-        el.innerHTML = displayElements;
+      this.$("#standardPrivacyLinksContainer").forEach(el => {
+        el.innerHTML = '<ul>' +
+          links.map(link => `<a href='/${link[1]}'><li>${link[0]}</li> </a>`).join('') +
+          '</ul>';
       });
     }
 
-    setSocialFirmaName() {
-      this.$("#socialFirmaName").forEach( el => {
-        switch(location.host) {
-          case "restaurantfreud.nl": 
-                el.innerText = "Restaurant Freud";
-          break;
-          case "zeefdrukmakers.nl":
-                el.innerText = "Zeefdrukmakers";
-          break;
-          case "roadsvervoer.nl":
-                el.innerText = "Roads Vervoer";
-          break;
-          case "roads-technology.nl":
-                el.innerText = "Roads Technology";
-          break;
-          case "houtstek.nl":
-                el.innerText = "Houtstek";
-          break;
-          case "appeltaartimperium.nl":
-                el.innerText = "Appeltaart Imperium";
-          break;
-          case "roadsprintenpixels.nl":
-                el.innerText = "Roads Print and Pixels";
-          break;
-          case "recyclefietsen.nl":
-                el.innerText = "Re Cycle"
-          break;
-          case "roads-website-footer.github.io":
-                el.innerText = "Roads Website Footer Co.";
-          break;
-          default:
-                el.innerText = "";
-        }
+    setSocialFirmaLogosAndInfo() {
+      const baseUrl = "https://roads-website-footer.github.io";
+      const firmas = [
+        [baseUrl + '/img/appeltaart.png', 'https://appeltaartimperium.nl/'],
+        [baseUrl + '/img/houtstek.png', 'https://houtstek.nl/'],
+        [baseUrl + '/img/printandpixels.jpg', 'https://roadsprintenpixels.nl/'],
+        [baseUrl + '/img/recycle.jpg', 'https://recyclefietsen.nl/'],
+        [baseUrl + '/img/restaurantfreud.png', 'https://restaurantfreud.nl/'],
+        [baseUrl + '/img/roadstechnology.jpg', 'https://roads-technology.nl/'],
+        [baseUrl + '/img/roadsvervoer.jpg', 'https://roadsvervoer.nl/'],
+        [baseUrl + '/img/zeefdrukmakers.jpg', 'https://zeefdrukmakers.nl/'],
+      ];
+
+      this.$("#otherSocialFirmas").forEach(el => {
+        el.innerHTML = '<ul>' +
+          firmas.map(firma => `<a href=${firma[1]}> <li> <img src='${firma[0]}'> </li> </a>`).join('') +
+          '</ul>';
       });
     }
-
   }
 );

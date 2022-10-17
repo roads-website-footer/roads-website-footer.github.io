@@ -1,67 +1,78 @@
 <html>
 
-  <body>
-    <script defer src="./element.js"></script>
+<body>
+  <script defer src="./element.js"></script>
 
-    <b>Opdract:</b> Maak in de HTML &lt;template> (in deze index.html) alle CSS
-    + HTML voor een generieke Footer die op alle Roads Social Firmas komt
+  <b>Opdract:</b> Maak in de HTML &lt;template> (in deze index.html) alle CSS
+  + HTML voor een generieke Footer die op alle Roads Social Firmas komt
 
+  <hr />
+
+  <template id="ROADS-WEBSITE-FOOTER">
+    <style>
+      :host {
+        clear: both;
+        width: 100%;
+      }
+
+      #footerContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        background-color: greenyellow;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+      }
+
+      li {
+        padding: 15px;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      img {
+        width: auto;
+        height: auto;
+        max-width: 250px;
+        max-height: 150px;
+      }
+    </style>
     <hr />
 
-    <template id="ROADS-WEBSITE-FOOTER">
-      <style>
-        :host{
-            clear:both;
-            width:100%;
-        }
-        #footerContainer{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 1em;
-            padding-bottom: 1em;
-            background-color: greenyellow;
-        }
-        ul{
-          list-style: none;
-          display: flex;
-          flex-direction: row;
-          padding: 0;
-        }
-        li{
-          padding-right: 5px;
-        }
-        a{
-          text-decoration: none;
-          color: black;
-        }
-        img{
-          width: 20px;
-          height: 20px;
-        }
-      </style>
-    <hr />
+    <!-- Site Copyright - extract from URL with JavaScript -->
+    <div id="footerContainer">
 
+      <div id="copyrightContainer">
+        <!-- Copyright &#xA9; <span id="year"> -->
+            <!-- automatisch jaar -->
+          <!-- </span> -->
 
-      <!-- Site Copyright - extract from URL with JavaScript -->
-      <div id = "footerContainer">
-
-        <div id="copyrightContainer">
-          Copyright 	&#xA9; <span id="year"><!-- automatisch jaar --></span>
-          <span id="socialFirmaName"><!-- volledige naam social firma --></span>
-        </div>
-        
-        <!-- standard Roads Privacy Links & contact webteam@roads-technology.nl -->
-        <div id = "standartPrivacyLinksContainer"> 
-        </div>
-
-        <!-- Logos van social firmas -->
-        <div id="otherSocialFirmas">Other Social Firmas</div>
-
+          <!-- <span id="socialFirmaName">
+            <!-- volledige naam social firma -->
+          <!-- </span> --> -->
       </div>
-    </template>
 
-    <roads-website-footer></roads-website-footer>
-  </body>
+      <!-- standard Roads Privacy Links & contact webteam@roads-technology.nl -->
+      <div id="standardPrivacyLinksContainer">
+      </div>
+
+      <!-- Logos van social firmas -->
+      <div id="otherSocialFirmas">Other Social Firmas</div>
+
+    </div>
+  </template>
+
+  <roads-website-footer></roads-website-footer>
+</body>
 
 </html>
