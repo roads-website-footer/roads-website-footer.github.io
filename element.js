@@ -79,7 +79,7 @@ customElements.define(
                 <li> 
                     <img src='${firma[0]}'>
                     <div id="socialFirmasInfoContainer">
-                      <div id="socialFirmasInfoText">
+                      <div id="socialFirmasInfoText" onMouseOver="this.style.opacity=1">
                         <ul>
                           ${firma[2].map(bulletPoint => 
                             `<li> ${bulletPoint} </li>`
