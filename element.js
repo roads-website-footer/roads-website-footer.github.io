@@ -61,20 +61,36 @@ customElements.define(
     setSocialFirmaLogosAndInfo() {
       const baseUrl = "https://roads-website-footer.github.io";
       const firmas = [
-        [baseUrl + '/img/appeltaart.png', 'https://appeltaartimperium.nl/'],
-        [baseUrl + '/img/houtstek.png', 'https://houtstek.nl/'],
-        [baseUrl + '/img/printandpixels.jpg', 'https://roadsprintenpixels.nl/'],
-        [baseUrl + '/img/recycle.jpg', 'https://recyclefietsen.nl/'],
-        [baseUrl + '/img/restaurantfreud.png', 'https://restaurantfreud.nl/'],
-        [baseUrl + '/img/roadstechnology.jpg', 'https://roads-technology.nl/'],
-        [baseUrl + '/img/roadsvervoer.jpg', 'https://roadsvervoer.nl/'],
-        [baseUrl + '/img/zeefdrukmakers.jpg', 'https://zeefdrukmakers.nl/'],
+        [baseUrl + '/img/appeltaart.png', 'https://appeltaartimperium.nl/', ['Ambachtelijke appeltaarten']],
+        [baseUrl + '/img/houtstek.png', 'https://houtstek.nl/', ['Meubels op maat', 'Diverse houten snijplanken']],
+        [baseUrl + '/img/printandpixels.jpg', 'https://roadsprintenpixels.nl/',['Drukwerk', 'Inpak- en afwerkklussen','Huisstijl design']],
+        [baseUrl + '/img/recycle.jpg', 'https://recyclefietsen.nl/', ['Fietsen en e-bikes','Koop en lease', 'Privé en zakelijk', 'Nieuw en gebruikt' ]],
+        [baseUrl + '/img/restaurantfreud.png', 'https://restaurantfreud.nl/', ['Catering', 'Dinerbonnen', 'Bedrijfsetentjes']],
+        [baseUrl + '/img/roadstechnology.jpg', 'https://roads-technology.nl/', ['Certified data wipe', 'Certified data wipe', 'Refurbished computers']],
+        [baseUrl + '/img/roadsvervoer.jpg', 'https://roadsvervoer.nl/', ['Goederen vervoer', 'Chauffeurs diensten']],
+        [baseUrl + '/img/zeefdrukmakers.jpg', 'https://zeefdrukmakers.nl/', ['Bedrukken textiel en bedrijfskleding', 'Workshops zeefdrukken']],
       ];
 
       this.$("#otherSocialFirmas").forEach(el => {
-        el.innerHTML = '<ul>' +
-          firmas.map(firma => `<a href=${firma[1]}> <li> <img src='${firma[0]}'> </li> </a>`).join('') +
-          '</ul>';
+        el.innerHTML = 
+        '<ul>' +
+          firmas.map(firma => 
+            `<a href=${firma[1]}> 
+                <li> 
+                    <img src='${firma[0]}'>
+                    <div id="socialFirmasInfoContainer">
+                      <div id="socialFirmasInfoText">
+                        <ul>
+                          ${firma[2].map(bulletPoint => 
+                            `<li> ${bulletPoint} </li>`
+                          )}
+                        </ul>
+                      </div>
+                    </div> 
+                </li> 
+            </a>`
+          ).join('') +
+        '</ul>';
       });
     }
   }
