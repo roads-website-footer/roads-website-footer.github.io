@@ -16,8 +16,8 @@ customElements.define(
 
     connectedCallback() {
       this.setCopyright();
-      this.setPrivacyLinks();
-      this.setSocialFirmaLogosAndInfo();
+      this.setLinks();
+      this.setFirms();
     }
 
     getCurrentYear() {
@@ -43,41 +43,37 @@ customElements.define(
       });
     }
 
-    setPrivacyLinks() {
+    setLinks() {
       const links = [
         ["Algemene Voorwaarden", "algemene-voorwaarden"],
         ["Privacyregelement", "privacyregelement"],
         ["Disclaimer", "disclaimer"]
       ];
 
-      this.$("#standardPrivacyLinksContainer").forEach(el => {
+      this.$("#linksContainer").forEach(el => {
         el.innerHTML = '<ul>' +
           links.map(link => `<a href='/${link[1]}'><li>${link[0]}</li> </a>`).join('') +
           '</ul>';
       });
     }
 
-    setSocialFirmaLogosAndInfo() {
-      this.$("#otherSocialFirmas").forEach(el => {
+    setFirms() {
+      this.$("#firmContainer").forEach(el => {
           el.innerHTML =
-          '<ul>' +
+          '<div class = card-container>' +
             firms.map(firm =>
-                `<a href=${firm.url}>
-                    <li>
+                `<div class = card>
+                    <div class = card-image>
                         <img src=${firm.thumbnail}>
-                        <div id="socialFirmasInfoContainer">
-                            <div id="socialFirmasInfoText" onMouseOver="this.style.opacity=1" onMouseOut="this.style.opacity=0">
-                                <ul>
-                                    ${firm.info.map(bulletPoint =>
-                                    `<li> ${bulletPoint} </li>`
-                                    )}
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </a>`
+                    </div>
+
+                    <div class = card-content>
+                     <p>${firm.name}<p>
+                     </div>
+                   </div>
+                `
             ).join('') +
-          '</ul>';
+          '</div';
       });
     }
   }

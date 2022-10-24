@@ -1,15 +1,10 @@
 <html>
-
 <body>
-<!--  <script defer src="./element.js"></script>-->
-  <script src="./element.js" type="module"></script>
+<b>Opdract:</b> Maak in de HTML &lt;template> (in deze index.html) alle CSS
++ HTML voor een generieke Footer die op alle Roads Social Firmas komt
 
-  <b>Opdract:</b> Maak in de HTML &lt;template> (in deze index.html) alle CSS
-  + HTML voor een generieke Footer die op alle Roads Social Firmas komt
-
-  <hr />
-
-  <template id="ROADS-WEBSITE-FOOTER">
+<hr/>
+<template id="ROADS-WEBSITE-FOOTER">
     <style>
       :host {
         clear: both;
@@ -42,74 +37,61 @@
       }
 
       img {
-        width: auto;
-        max-width: 250px;
-        max-height: 150px;
-        mix-blend-mode: multiply;
-        height: 40px;
+        width: 100%;
       }
-      
-      #socialFirmasContainer{
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 350px;
+        height: 500px;
+        background: #ffffff;
+        box-shadow: 0 10px 10px #00000080;
+        margin: 25px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 2fr;
+        overflow: hidden;
+    }
+
+    .card-image {
+        height: 250px;
+        width: 100%;
         position: relative;
-        width: 50%;
-      }
+        background: #d30038;
+        padding: 1em;
+    }
 
-      #socialFirmasInfoContainer{
-        transition: .5s ease;
-        position: relative;
-        text-align: center;
-      }
-
-      #socialFirmasContainer img{
-        opacity: 1;
-        display: block;
-        transition: .5s ease;
-        backface-visibility: hidden;
-      }
-
-      #socialFirmasContainer img:hover{
-        opacity: 0.3;
-        width: auto;
+    .card-content {
+        width: auto%;
         height: auto;
-        max-width: 250px;
-        max-height: 150px;
-      }
+        background: #23279c;
+    }
+  }
 
-      #socialFirmasInfoText {
-        background-color: hotpink;
-        color: white;
-        font-size: 16px;
-        opacity: 0;
-      }
     </style>
-    <hr />
+    <hr/>
 
-    <!-- Site Copyright - extract from URL with JavaScript -->
     <div id="footerContainer">
 
-      <div id="copyrightContainer">
-        <!-- Copyright &#xA9; <span id="year"> -->
-            <!-- automatisch jaar -->
-          <!-- </span> -->
+        <div id="copyrightContainer">
+        </div>
 
-          <!-- <span id="socialFirmaName">
-            <!-- volledige naam social firma -->
-          <!-- </span> --> -->
-      </div>
+        <div id="linksContainer">
+        </div>
 
-      <!-- standard Roads Privacy Links & contact webteam@roads-technology.nl -->
-      <div id="standardPrivacyLinksContainer">
-      </div>
-
-      <!-- Logos van social firmas -->
-      <div id="socialFirmasContainer">
-        <div id="otherSocialFirmas">Other Social Firmas</div>
-      </div>
+        <div id="firmContainer">
+        </div>
 
     </div>
-  </template>
+</template>
 
-  <roads-website-footer></roads-website-footer>
+<roads-website-footer></roads-website-footer>
 </body>
 
+<script src="./element.js" type="module"></script>
 </html>
