@@ -41,10 +41,23 @@
     "name": "Roads Technology",
     "url": "https://roads-technology.nl/",
     "thumbnail": "https://roads-website-footer.github.io/img/roads_technology.svg",
-    "info": [
-      "Certified data wipe",
-      "Certified data wipe",
-      "Refurbished computers"
+    "links": [
+      {
+        "url": "https://www.facebook.com/roadstechnology.nl",
+        "icon": "https://roads-website-footer.github.io/img/facebook.svg"
+      },
+      {
+        "url": "https://twitter.com/roads_tech",
+        "icon": "https://roads-website-footer.github.io/img/twitter.svg"
+      },
+      {
+        "url": "https://instagram.com/roadstechnology",
+        "icon": "https://roads-website-footer.github.io/img/instagram.svg"
+      },
+      {
+        "url": "https://youtube.com",
+        "icon": "https://roads-website-footer.github.io/img/youtube.svg"
+      }
     ]
   },
   {
@@ -71,7 +84,8 @@
     "url": "https://zeefdrukmakers.nl/",
     "thumbnail": "https://roads-website-footer.github.io/img/zeefdrukmakers.jpg",
     "info": [
-      "Bedrukken textiel en bedrijfskleding", "Workshops zeefdrukken"
+      "Bedrukken textiel en bedrijfskleding",
+      "Workshops zeefdrukken"
     ]
   }
 ]
