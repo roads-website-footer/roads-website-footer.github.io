@@ -25,16 +25,16 @@ customElements.define(
     }
 
     getFirmName() {
-        let name = "";
-        firms.map(firm => {
-            if(firm.url === window.location.origin) {
-                name = firm.name
-           } else {
-                name = "Roads Technology"
-           }
-        });
+      let name = "";
+      firms.map(firm => {
+        if (firm.url === window.location.origin) {
+          name = firm.name
+        } else {
+          name = "Roads Technology"
+        }
+      });
 
-        return name;
+      return name;
     }
 
     setCopyright() {
@@ -59,20 +59,21 @@ customElements.define(
 
     setFirms() {
       this.$("#firmContainer").forEach(el => {
-          el.innerHTML =
-          '<div class = card-container>' +
-            firms.map(firm => 
-                `<div class = card>
-                    <div class = card-image>
-                        <img src=${firm.thumbnail}>
-                    </div>
-
-                    <div class = card-content>
-                     <p>${firm.name}<p>
-                     </div>
-                   </div>
-                `
-            ).join('') +
+        el.innerHTML =
+          '<div class=card-container>' +
+          firms.map(firm =>
+            `<div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src=${firm.thumbnail}>
+                  </div>
+                <div class="flip-card-back">
+                  <p>${firm.name}<p>
+                </div>
+              </div>
+            </div>
+            `
+          ).join('') +
           '</div';
       });
     }
