@@ -77,8 +77,10 @@
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
       }
-      
+
       .flip-card-back {
+        display: grid;
+        grid-template-rows: auto auto 100px;
         position: absolute;
         width: 100%;
         height: 100%;
@@ -95,6 +97,15 @@
         background-color: #31afe1;
         color: white;
         transform: rotateY(180deg);
+      }
+
+      .social-icons {
+        display: flex;
+        justify-content: center;
+      }
+
+      .social-icons img {
+        height: 100%;
       }
     </style>
     <hr />

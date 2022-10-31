@@ -68,7 +68,18 @@ customElements.define(
                     <img src=${firm.thumbnail}>
                   </div>
                 <div class="flip-card-back">
-                  <p>${firm.name}<p>
+                  <p>${firm.name}</p>
+                  <div class="">
+                  <p>${firm.info}</p>
+                  </div>
+            ` +
+                `<div class="social-icons">` +
+                firm.links.map(link =>
+                  `<a href=${link.url}>
+                    <img src='${link.icon}'></img>
+                  </a>`
+                ).join('') + `
+                </div>
                 </div>
               </div>
             </div>
