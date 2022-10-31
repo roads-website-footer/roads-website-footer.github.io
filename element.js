@@ -61,7 +61,7 @@ customElements.define(
       this.$("#firmContainer").forEach(el => {
           el.innerHTML =
           '<div class = card-container>' +
-            firms.map(firm =>
+            firms.map(firm => 
                 `<div class = card>
                     <div class = card-image>
                         <img src=${firm.thumbnail}>
