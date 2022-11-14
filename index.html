@@ -1,132 +1,16 @@
 <html>
+  <body>
+    <b>Opdract:</b> Maak in de HTML &lt;template> (in deze index.html) alle CSS
+    + HTML voor een generieke Footer die op alle Roads Social Firmas komt
 
-<body>
-  <b>Opdract:</b> Maak in de HTML &lt;template> (in deze index.html) alle CSS
-  + HTML voor een generieke Footer die op alle Roads Social Firmas komt
-
-  <hr />
-  <template id="ROADS-WEBSITE-FOOTER">
-    <style>
-      :host {
-        clear: both;
-        width: 100%;
-      }
-
-      #footerContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        background-color: #d4dad3;
-      }
-
-      ul {
-        list-style: none;
-        display: flex;
-        flex-direction: row;
-        padding: 0;
-      }
-
-      li {
-        padding: 15px;
-      }
-
-      a {
-        text-decoration: none;
-        color: black;
-      }
-
-      img {
-        width: 90%;
-      }
-
-      .card-container {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-      }
-
-      .flip-card {
-        background-color: transparent;
-        width: 300px;
-        height: 300px;
-        perspective: 1000px;
-        padding: 25px;
-      }
-
-      .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      }
-
-      .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-
-      .flip-card-front {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: grid;
-        place-items: center;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-
-      .flip-card-back {
-        display: grid;
-        grid-template-rows: auto auto 100px;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-      }
-
-      .flip-card-front {
-        background-color: white;
-        color: black;
-      }
-
-      .flip-card-back {
-        background-color: #31afe1;
-        color: white;
-        transform: rotateY(180deg);
-      }
-
-      .social-icons {
-        display: flex;
-        justify-content: center;
-      }
-
-      .social-icons img {
-        height: 100%;
-      }
-    </style>
+    <hr />
     <hr />
 
-    <div id="footerContainer">
+    <roads-website-footer> </roads-website-footer>
+  </body>
 
-      <div id="copyrightContainer">
-      </div>
-
-      <div id="linksContainer">
-      </div>
-
-      <div id="firmContainer">
-      </div>
-
-    </div>
-  </template>
-
-  <roads-website-footer></roads-website-footer>
-</body>
-
-<script src="./element.js" type="module"></script>
-
+  <script src="./component/footer.js" type="module"></script>
+  <script src="./component/copyright.js" type="module"></script>
+  <script src="./component/links.js" type="module"></script>
+  <script src="./component/firms.js" type="module"></script>
 </html>
