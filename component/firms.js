@@ -1,80 +1,105 @@
 import firms from "../data.json" assert { type: "json" };
 
 const template = document.createElement("template");
-template.innerHTML = `
+template.innerHTML = /* html */ `
 <style>
-  .firms {
+/* Hover over a card to flip, can tab too. */
+/* firm */
+#firm {
+  min-height: 50vh;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
-  }
+/* .flip-card-container */
+.flip-card-container {
+  width: 300px;
+  height: 300px;
+  margin: 40px;
+  perspective: 1000px;
+}
 
-  img {
-    width: 90%;
-  }
+/* .flip-card */
+.flip-card {
+  width: inherit;
+  height: inherit;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: .6s .1s;
+  <!-- transform: rotateY(180deg); -->
+}
 
-  .flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 300px;
-    perspective: 1000px;
-    padding: 25px;
-  }
+/* hover and focus-within states */
+.flip-card-container:hover .flip-card,
+.flip-card-container:focus-within .flip-card {
+  transform: rotateY(180deg);
+}
 
-  .flip-card:hover .card {
-    transform: rotateY(180deg);
-  }
+/* .card-front */
+.card-front{
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .card-container {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-  }
+.card-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
 
-  .card {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
+.card-front >img {
+  width: 90%;
+}
 
-  .card-front {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    place-items: center;
-    background-color: white;
-    color: black;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
+/* .card-back */
+.card-back {
+  display: grid;
+  grid-template-rows: auto auto 10%;
+  width: 100%;
+  height: 100%;
+  border-radius: 24px;
+  background: white;
+  overflow: hidden;
+  backface-visibility: hidden;
+  justify-self: center;
+  text-align: center;
+}
 
-  .card-back {
-    display: grid;
-    grid-template-rows: auto auto 10%;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #31afe1;
-    color: white;
-    transform: rotateY(180deg);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
+.card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
 
-  .social-icons {
+.social-icons {
     display: flex;
     justify-content: center;
   }
 
-  .social-icons img {
-    height: 100%;
-  }
-</style>
+.social-icons img {
+  height: 100%;
+}
 
-<div id ="firm" class="firm">
-</div>`;
+/* hover state */
+.flip-card-container:hover .card-front .img-bg::before {
+  width: 6px;
+  border-left-color: var(--primary);
+  border-right-color: var(--primary);
+}
+</style>
+<div id ="firm" class="firm"> </div>
+`;
 
 class Firms extends HTMLElement {
   constructor() {
@@ -89,39 +114,34 @@ class Firms extends HTMLElement {
 
   setFirms() {
     this.shadowRoot.getElementById("firm").innerHTML =
-      "<div class=card-container>" +
-      firms
-        .map(
-          ({ thumbnail, name, info, links }) =>
-            `<div class="flip-card">
-              <div class="card">
-                <div class="card-front">
-                    <img src=${thumbnail}>
-                  </div>
-                <div class="card-back">
-                  <p>${name}</p>
-                  <div class="">
-                  <p>${info}</p>
-                  </div>
-            ` +
-            `<div class="social-icons">` +
-            links
-              .map(
-                ({ url, icon }) =>
-                  `<a href=${url}>
-                    <img src='${icon}'></img>
-                  </a>`
-              )
-              .join("") +
-            `
-                </div>
-                </div>
+      "<div>" +
+      firms.map(
+        ({ thumbnail, name, info, links }) =>
+          /* html */
+          `<div class="flip-card-container">
+            <div class="flip-card">
+      
+              <div class="card-front">
+                <img src= ${thumbnail}> 
+              </div>
+
+              <div class="card-back"> 
+                <p>${name}</p>
+                <p>${info}</p>
+              
+                <div class="social-icons">
+               ` +
+          links
+            .map(({ url, icon }) => `<a href=${url}> <img src='${icon}'></a>`)
+            .join("") +
+          /* html */ `
+          </div>
               </div>
             </div>
-            `
-        )
-        .join("") +
-      "</div";
+        </div>
+      </div>
+     `
+      );
   }
 }
 

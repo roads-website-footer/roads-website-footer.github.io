@@ -1,5 +1,5 @@
 const template = document.createElement("template");
-template.innerHTML = `
+template.innerHTML = /* html */ `
 <style>
   .footer {
     display: flex;
@@ -7,9 +7,11 @@ template.innerHTML = `
     align-items: center;
     padding-top: 1em;
     padding-bottom: 1em;
-    background-color: #d4dad3;
+    background-color: #31AFE1; 
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
+    color: #353535;
+    line-height: 28px
   }
 </style>
 

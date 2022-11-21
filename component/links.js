@@ -1,5 +1,5 @@
 const template = document.createElement("template");
-template.innerHTML = `
+template.innerHTML = /* html */ `
 <style>
   .link {
 
@@ -18,7 +18,12 @@ template.innerHTML = `
 
   a {
     text-decoration: none;
-    color: black;
+    color: white;
+  }
+
+  a:hover {
+    color: #EE7222;
+
   }
 </style>
 
