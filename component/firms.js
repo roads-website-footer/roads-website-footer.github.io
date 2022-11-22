@@ -14,8 +14,8 @@ template.innerHTML = /* html */ `
 
 /* .flip-card-container */
 .flip-card-container {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   margin: 10px;
   perspective: 1000px;
   display: inline-block;
@@ -34,9 +34,9 @@ template.innerHTML = /* html */ `
 /* hover and focus-within states */
 
 .flip-card-container:hover {
-  width: 150px;
-  height: 150px;
-  margin: 40px;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
   perspective: 1000px;
 }
 
