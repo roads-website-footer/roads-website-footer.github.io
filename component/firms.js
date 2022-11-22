@@ -34,8 +34,8 @@ template.innerHTML = /* html */ `
 /* hover and focus-within states */
 
 .flip-card-container:hover {
-  width: 300px;
-  height: 300px;
+  width: 150px;
+  height: 150px;
   margin: 40px;
   perspective: 1000px;
 }
