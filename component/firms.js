@@ -49,7 +49,7 @@ template.innerHTML = /* html */ `
 .card-front{
   width: 100%;
   height: 100%;
-  border-radius: 24px;
+  border-radius: 100%;
   background: white;
   position: absolute;
   top: 0;
