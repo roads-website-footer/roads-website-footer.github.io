@@ -141,7 +141,7 @@ class Firms extends HTMLElement {
         </div>
       </div>
      `
-      );
+      ).join("");
   }
 }
 
