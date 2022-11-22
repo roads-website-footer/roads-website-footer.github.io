@@ -104,11 +104,6 @@ template.innerHTML = /* html */ `
   height: 100%;
 }
 
-.flip-card-container:hover .card-front{
-  width: 50px;
-  height: 50px;
-}
-
 .flip-card-container:hover .card-front .img-bg::before {
   width: 6px;
   border-left-color: var(--primary);
