@@ -9,9 +9,9 @@ template.innerHTML = /* html */ `
     padding-bottom: 1em;
     background-color: #31AFE1; 
     font-family: "Open Sans", sans-serif;
-    font-size: 10px;
+    font-size: 12px;
     color: #353535;
-    line-height: 28px
+    line-height: 13px;
   }
 </style>
 
