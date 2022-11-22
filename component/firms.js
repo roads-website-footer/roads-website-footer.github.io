@@ -67,8 +67,8 @@ template.innerHTML = /* html */ `
 .card-back {
   display: grid;
   grid-template-rows: auto auto 10%;
-  width: 100%;
-  height: 100%;
+  width: 20%;
+  height: 20%;
   border-radius: 24px;
   background: white;
   overflow: hidden;
@@ -92,6 +92,11 @@ template.innerHTML = /* html */ `
 }
 
 /* hover state */
+.flip-card-container:hover .card-back {
+  width: 100%;
+  height: 100%;
+}
+
 .flip-card-container:hover .card-front .img-bg::before {
   width: 6px;
   border-left-color: var(--primary);
