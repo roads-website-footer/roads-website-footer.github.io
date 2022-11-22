@@ -54,7 +54,7 @@ customElements.define(
             `
             )
             .join("") +
-          "</div";
+          "</div>";
       });
     }
   }
