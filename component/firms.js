@@ -126,7 +126,6 @@ class Firms extends HTMLElement {
 
   setFirms() {
     this.shadowRoot.getElementById("firm").innerHTML =
-      "<div>" +
       firms.map(
         ({ thumbnail, name, info, links }) =>
           /* html */
@@ -151,7 +150,6 @@ class Firms extends HTMLElement {
               </div>
             </div>
         </div>
-      </div>
      `
       ).join("");
   }
