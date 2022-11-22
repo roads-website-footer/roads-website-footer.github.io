@@ -9,7 +9,7 @@ template.innerHTML = /* html */ `
     padding-bottom: 1em;
     background-color: #31AFE1; 
     font-family: "Open Sans", sans-serif;
-    font-size: 14px;
+    font-size: 10px;
     color: #353535;
     line-height: 28px
   }
