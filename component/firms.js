@@ -16,8 +16,9 @@ template.innerHTML = /* html */ `
 .flip-card-container {
   width: 50px;
   height: 50px;
-  margin: 20px;
+  margin: 10px;
   perspective: 1000px;
+  display: inline-block;
 }
 
 /* .flip-card */
