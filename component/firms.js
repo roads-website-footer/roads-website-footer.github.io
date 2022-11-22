@@ -16,9 +16,9 @@ template.innerHTML = /* html */ `
 
 /* .flip-card-container */
 .flip-card-container {
-  width: 300px;
-  height: 300px;
-  margin: 40px;
+  width: 50px;
+  height: 50px;
+  margin: 20px;
   perspective: 1000px;
 }
 
@@ -33,6 +33,14 @@ template.innerHTML = /* html */ `
 }
 
 /* hover and focus-within states */
+
+.flip-card-container:hover {
+  width: 300px;
+  height: 300px;
+  margin: 40px;
+  perspective: 1000px;
+}
+
 .flip-card-container:hover .flip-card,
 .flip-card-container:focus-within .flip-card {
   transform: rotateY(180deg);
