@@ -133,7 +133,7 @@ class Firms extends HTMLElement {
                ` +
           links
             .map(({ url, icon }) => `<a href=${url}> <img src='${icon}'></a>`)
-            .join(",") +
+            .join("") +
           /* html */ `
           </div>
               </div>
