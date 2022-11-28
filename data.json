@@ -4,7 +4,10 @@
     "url": "https://appeltaartimperium.nl",
     "thumbnail": "https://roads-website-footer.github.io/img/appeltaart_imperium.svg",
     "info": "Test",
-    "colors": [],
+    "colors": {
+      "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
+      "secondary": ""
+    },
     "links": [
       {
         "url": "https://instagram.com/roadstechnology",
@@ -21,7 +24,10 @@
     "url": "https://houtstek.nl/",
     "thumbnail": "https://roads-website-footer.github.io/img/houtstek.png",
     "info": "Test",
-    "colors": [],
+    "colors": {
+      "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
+      "secondary": ""
+    },
     "links": [
       {
         "url": "https://instagram.com/roadstechnology",
@@ -38,7 +44,10 @@
     "url": "https://recyclefietsen.nl/",
     "thumbnail": "https://roads-website-footer.github.io/img/recycle.jpg",
     "info": "Test",
-    "colors": [],
+    "colors": {
+      "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
+      "secondary": ""
+    },
     "links": [
       {
         "url": "https://instagram.com/roadstechnology",
@@ -55,7 +64,10 @@
     "url": "https://restaurantfreud.nl/",
     "thumbnail": "https://roads-website-footer.github.io/img/restaurantfreud.png",
     "info": "Test",
-    "colors": [],
+    "colors": {
+      "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
+      "secondary": ""
+    },
     "links": [
       {
         "url": "https://instagram.com/roadstechnology",
@@ -72,12 +84,10 @@
     "url": "https://roads-technology.nl/",
     "thumbnail": "https://roads-website-footer.github.io/img/roads_technology.svg",
     "info": "Leergierige mannen en vrouwen met een afstand tot de arbeidsmarkt werken onder begeleiding van IT-professionals aan het gewenste eindproduct. Zo maken wij IT weer menselijk.",
-    "colors": [
-      {
-        "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
-        "secondary": ""
-      }
-    ],
+    "colors": {
+      "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
+      "secondary": "#3cabcd"
+    },
     "links": [
       {
         "url": "https://www.facebook.com/roadstechnology.nl",
@@ -102,7 +112,10 @@
     "url": "https://roadsprintenpixels.nl/",
     "thumbnail": "https://roads-website-footer.github.io/img/print_en_pixels.svg",
     "info": "Test",
-    "colors": [],
+    "colors": {
+      "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
+      "secondary": ""
+    },
     "links": [
       {
         "url": "https://instagram.com/roadstechnology",
@@ -119,7 +132,10 @@
     "url": "https://roadsvervoer.nl/",
     "thumbnail": "https://roads-website-footer.github.io/img/roadsvervoer.jpg",
     "info": "Test",
-    "colors": [],
+    "colors": {
+      "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
+      "secondary": "#fd1515"
+    },
     "links": [
       {
         "url": "https://instagram.com/roadstechnology",
@@ -136,7 +152,10 @@
     "url": "https://zeefdrukmakers.nl/",
     "thumbnail": "https://roads-website-footer.github.io/img/zeefdrukmakers.jpg",
     "info": "Test",
-    "colors": [],
+    "colors": {
+      "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
+      "secondary": ""
+    },
     "links": [
       {
         "url": "https://instagram.com/roadstechnology",
