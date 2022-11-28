@@ -54,7 +54,7 @@ class Link extends HTMLElement {
   getCopyright = () =>
     `<span class="copyright">&#169; ${this.getCurrentYear()} ${this.getFirmName()}</span>`;
 
-  setLinks() {
+  setLinks = () => {
     const links = [
       ["Disclaimer", "disclaimer"],
       ["Privacyregelement", "privacyregelement"],
