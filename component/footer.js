@@ -16,9 +16,8 @@ template.innerHTML = /* html */ `
 </style>
 
 <div id ="footer" class="footer">
-  <roads-copyright></roads-copyright>
-  <roads-link></roads-link>
   <roads-firms></roads-firms>
+  <roads-links></roads-links>
 </div>`;
 
 class RoadsFooter extends HTMLElement {

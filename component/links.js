@@ -1,34 +1,28 @@
+import firms from "../data.json" assert { type: "json" };
+
 const template = document.createElement("template");
 template.innerHTML = /* html */ `
 <style>
-  .link {
-
-  }
-
-  ul {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-  }
-
-  li {
-    padding: 15px;
-  }
-
   a {
     text-decoration: none;
     color: white;
   }
 
   a:hover {
-    color: #EE7222;
+    text-decoration: underline;
+  }
 
+  .seperator {
+    padding: 5px;
+    color: white;
+  }
+
+  .copyright {
+    color: white;
   }
 </style>
 
-<div id ="link" class="link">
-</div>`;
+<div id ="link"></div>`;
 
 class Link extends HTMLElement {
   constructor() {
@@ -41,20 +35,49 @@ class Link extends HTMLElement {
     this.setLinks();
   }
 
+  getCurrentYear = () => new Date().getFullYear();
+
+  getFirmName = () => {
+    let name = "";
+
+    firms.map((firm) => {
+      if (firm.url === window.location.origin) {
+        name = firm.name;
+      } else {
+        name = "Roads Technology";
+      }
+    });
+
+    return name;
+  };
+
+  getCopyright = () =>
+    `<span class="copyright">&#169; ${this.getCurrentYear()} ${this.getFirmName()}</span>`;
+
   setLinks() {
     const links = [
-      ["Algemene Voorwaarden", "algemene-voorwaarden"],
-      ["Privacyregelement", "privacyregelement"],
       ["Disclaimer", "disclaimer"],
+      ["Privacyregelement", "privacyregelement"],
+      ["Algemene Voorwaarden", "algemene-voorwaarden"],
     ];
 
-    this.shadowRoot.getElementById("link").innerHTML =
-      "<ul>" +
-      links
-        .map((link) => `<a href='/${link[1]}'><li>${link[0]}</li> </a>`)
-        .join("") +
-      "</ul>";
+    this.shadowRoot.getElementById("link").innerHTML = links
+      .map((link, index) => {
+        /* html */
+        let linkBuilder = "";
+
+        if (index === link.length) {
+          linkBuilder = `<a href='/${link[1]}'>${
+            link[0]
+          }</a><span class="seperator">|</span>${this.getCopyright()}`;
+        } else {
+          linkBuilder = `<a href='/${link[1]}'>${link[0]}</a><span class="seperator">|</span>`;
+        }
+
+        return linkBuilder;
+      })
+      .join("");
   }
 }
 
-window.customElements.define("roads-link", Link);
+window.customElements.define("roads-links", Link);
