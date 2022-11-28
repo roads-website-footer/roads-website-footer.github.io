@@ -15,9 +15,9 @@ template.innerHTML = /* html */ `
 
 /* .flip-card-container */
 .flip-card-container {
-  width: 175px;
-  height: 175px;
-  margin: 20px;
+  width: 220px;
+  height: 150px;
+  margin: 4px;
   perspective: 1000px;
 }
 
@@ -32,16 +32,18 @@ template.innerHTML = /* html */ `
 }
 
 /* hover and focus-within states */
+/*
 .flip-card-container:hover .flip-card,
 .flip-card-container:focus-within .flip-card {
   transform: rotateY(180deg);
 }
+*/
 
 /* .card-front */
 .card-front{
   width: 100%;
   height: 100%;
-  border-radius: 24px;
+  border-radius: 12px;
   background: white;
   position: absolute;
   top: 0;
@@ -59,7 +61,7 @@ template.innerHTML = /* html */ `
 }
 
 .card-front >img {
-  width: 90%;
+  width: 65%;
 }
 
 /* .card-back */
@@ -97,7 +99,8 @@ template.innerHTML = /* html */ `
   border-right-color: var(--primary);
 }
 </style>
-<div id ="firm" class="firm"> </div>
+
+<div id ="firm"></div>
 `;
 
 class Firms extends HTMLElement {
