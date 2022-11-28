@@ -15,13 +15,12 @@ template.innerHTML = /* html */ `
     color: #353535;
     line-height: 28px
   }
-  
+
   #test {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    align-items: end;
+    padding: 1em;
     background-color: grey; 
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
