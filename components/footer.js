@@ -3,20 +3,34 @@ import firms from "./data.json" assert { type: "json" };
 const template = document.createElement("template");
 template.innerHTML = /* html */ `
 <style>
+#title {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 3px;
+    padding-top: 1em;
+    padding-left: 3em;
+    background-color: grey; 
+    font-family: "Palanquin Dark", Arial, Helvetica, Verdana, sans-serif;
+    font-size: 14px;
+    color: white;
+    line-height: 28px
+  }
+
   #footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 3px;
     padding-top: 1em;
     padding-bottom: 1em;
     background-color: grey; 
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
-    color: #353535;
     line-height: 28px
   }
 
-  #test {
+  #info {
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -29,10 +43,13 @@ template.innerHTML = /* html */ `
   }
 </style>
 
+<div id ="title">
+  <h2>"Roads werkt!"</h2>
+</div>
 <div id ="footer">
   <roads-firms></roads-firms>
 </div>
-<div id="test"> 
+<div id="info"> 
   <roads-links></roads-links>
 </div>`;
 
@@ -72,11 +89,13 @@ class RoadsFooter extends HTMLElement {
 
   setStyle = () => {
     const { primary, secondary } = this.getFirmColor();
+    const titleStyle = this.shadowRoot.getElementById("title").style;
     const footerStyle = this.shadowRoot.getElementById("footer").style;
-    const testStyle = this.shadowRoot.getElementById("test").style;
+    const infoStyle = this.shadowRoot.getElementById("info").style;
 
+    this.setBackgroundColor(primary, titleStyle);
     this.setBackgroundColor(primary, footerStyle);
-    this.setBackgroundColor(secondary, testStyle);
+    this.setBackgroundColor(secondary, infoStyle);
   };
 }
 
