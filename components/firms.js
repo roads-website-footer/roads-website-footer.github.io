@@ -1,4 +1,4 @@
-import firms from "../data.json" assert { type: "json" };
+import firms from "./data.json" assert { type: "json" };
 
 const template = document.createElement("template");
 template.innerHTML = /* html */ `
@@ -6,7 +6,7 @@ template.innerHTML = /* html */ `
 /* Hover over a card to flip, can tab too. */
 /* firm */
 #firm {
-  min-height: 30vh;
+  min-height: 20vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -60,9 +60,9 @@ template.innerHTML = /* html */ `
   z-index: 2;
 }
 
-.card-front >img {
+<!-- .card-front >img {
   width: 65%;
-}
+} -->
 
 /* .card-back */
 .card-back {
@@ -143,7 +143,7 @@ class Firms extends HTMLElement {
         </div>
       </div>
      `
-      );
+      ).join("");
   }
 }
 

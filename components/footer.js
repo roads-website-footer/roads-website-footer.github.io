@@ -1,4 +1,4 @@
-import firms from "../data.json" assert { type: "json" };
+import firms from "./data.json" assert { type: "json" };
 
 const template = document.createElement("template");
 template.innerHTML = /* html */ `

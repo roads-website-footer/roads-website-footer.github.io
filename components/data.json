@@ -2,7 +2,7 @@
   {
     "name": "Appeltaart Imperium",
     "url": "https://appeltaartimperium.nl",
-    "thumbnail": "https://roads-website-footer.github.io/img/appeltaart_imperium.svg",
+    "thumbnail": "https://roads-website-footer.github.io/components/images/appeltaart_imperium.svg",
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
@@ -22,7 +22,7 @@
   {
     "name": "Houtstek",
     "url": "https://houtstek.nl/",
-    "thumbnail": "https://raw.githubusercontent.com/roads-website-footer/roads-website-footer.github.io/8c43fdceac86f78f4d8b3c8b2374a12fd9b9d614/img/houtstek.svg",
+    "thumbnail": "https://roads-website-footer.github.io/components/images/houtstek.svg",
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
@@ -42,7 +42,7 @@
   {
     "name": "Re Cycle",
     "url": "https://recyclefietsen.nl/",
-    "thumbnail": "https://roads-website-footer.github.io/img/recycle.jpg",
+    "thumbnail": "https://roads-website-footer.github.io/components/images/recycle.svg",
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
@@ -62,7 +62,7 @@
   {
     "name": "Restaurant Freud",
     "url": "https://restaurantfreud.nl/",
-    "thumbnail": "https://roads-website-footer.github.io/img/restaurantfreud.png",
+    "thumbnail": "https://roads-website-footer.github.io/components/images/restaurant_freud.svg",
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
@@ -82,7 +82,7 @@
   {
     "name": "Roads Technology",
     "url": "https://roads-technology.nl/",
-    "thumbnail": "https://roads-website-footer.github.io/img/roads_technology.svg",
+    "thumbnail": "https://roads-website-footer.github.io/components/images/roads_technology.svg",
     "info": "Leergierige mannen en vrouwen met een afstand tot de arbeidsmarkt werken onder begeleiding van IT-professionals aan het gewenste eindproduct. Zo maken wij IT weer menselijk.",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
@@ -110,7 +110,7 @@
   {
     "name": "Roads Print and Pixels",
     "url": "https://roadsprintenpixels.nl/",
-    "thumbnail": "https://roads-website-footer.github.io/img/print_en_pixels.svg",
+    "thumbnail": "https://roads-website-footer.github.io/components/images/print_en_pixels.svg",
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
@@ -130,7 +130,7 @@
   {
     "name": "Roads Vervoer",
     "url": "https://roadsvervoer.nl/",
-    "thumbnail": "https://roads-website-footer.github.io/img/roadsvervoer.jpg",
+    "thumbnail": "https://roads-website-footer.github.io/components/images/roads_vervoer.svg",
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
@@ -150,7 +150,7 @@
   {
     "name": "Zeefdrukmakers",
     "url": "https://zeefdrukmakers.nl/",
-    "thumbnail": "https://roads-website-footer.github.io/img/zeefdrukmakers.jpg",
+    "thumbnail": "https://roads-website-footer.github.io/components/images/zeefdrukmakers.svg",
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
