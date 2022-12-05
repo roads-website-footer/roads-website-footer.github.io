@@ -41,7 +41,7 @@ template.innerHTML = /* html */ `
 */
 
 /* .card-front */
-.card-front{
+.card-front {
   width: 100%;
   height: 100%;
   border-radius: 12px;
@@ -61,7 +61,7 @@ template.innerHTML = /* html */ `
   z-index: 2;
 }
 
-.card-front >img {
+.card-front img {
   width: 60%;
 }
 
@@ -127,14 +127,16 @@ class Firms extends HTMLElement {
   setFirms() {
     this.shadowRoot.getElementById("firm").innerHTML = firms
       .map(
-        ({ thumbnail, name, info, links }) =>
+        ({ name, url, thumbnail, info, links }) =>
           /* html */
           `<div class="flip-card-container">
             <div class="flip-card">
       
-              <div class="card-front">
-                <img src= ${thumbnail}> 
-              </div>
+              <a href= ${url}>
+                <div class="card-front">
+                  <img src= ${thumbnail}>
+                </div>
+              </a> 
 
               <div class="card-back"> 
                 <p>${name}</p>
