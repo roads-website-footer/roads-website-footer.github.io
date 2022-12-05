@@ -1,4 +1,4 @@
-import firms from "../data.json" assert { type: "json" };
+import firms from "./data.json" assert { type: "json" };
 
 const template = document.createElement("template");
 template.innerHTML = /* html */ `
@@ -6,6 +6,7 @@ template.innerHTML = /* html */ `
 /* Hover over a card to flip, can tab too. */
 /* firm */
 #firm {
+  min-height: 20vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -14,9 +15,9 @@ template.innerHTML = /* html */ `
 
 /* .flip-card-container */
 .flip-card-container {
-  width: 100px;
-  height: 100px;
-  margin: 10px;
+  width: 220px;
+  height: 150px;
+  margin: 4px;
   perspective: 1000px;
   display: inline-block;
 }
@@ -32,24 +33,18 @@ template.innerHTML = /* html */ `
 }
 
 /* hover and focus-within states */
-
-.flip-card-container:hover {
-  width: 200px;
-  height: 200px;
-  margin: 20px;
-  perspective: 1000px;
-}
-
+/*
 .flip-card-container:hover .flip-card,
 .flip-card-container:focus-within .flip-card {
   transform: rotateY(180deg);
 }
+*/
 
 /* .card-front */
 .card-front{
   width: 100%;
   height: 100%;
-  border-radius: 100%;
+  border-radius: 12px;
   background: white;
   position: absolute;
   top: 0;
@@ -67,7 +62,11 @@ template.innerHTML = /* html */ `
 }
 
 .card-front >img {
-  width: 90%;
+  width: 60%;
+}
+
+img[src*="roads_"] {
+  width: 85%;
 }
 
 /* .card-back */
@@ -110,7 +109,8 @@ template.innerHTML = /* html */ `
   border-right-color: var(--primary);
 }
 </style>
-<div id ="firm" class="firm"> </div>
+
+<div id ="firm"></div>
 `;
 
 class Firms extends HTMLElement {
@@ -125,8 +125,8 @@ class Firms extends HTMLElement {
   }
 
   setFirms() {
-    this.shadowRoot.getElementById("firm").innerHTML =
-      firms.map(
+    this.shadowRoot.getElementById("firm").innerHTML = firms
+      .map(
         ({ thumbnail, name, info, links }) =>
           /* html */
           `<div class="flip-card-container">
@@ -151,7 +151,8 @@ class Firms extends HTMLElement {
             </div>
         </div>
      `
-      ).join("");
+      )
+      .join("");
   }
 }
 
