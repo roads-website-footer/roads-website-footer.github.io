@@ -26,16 +26,12 @@ template.innerHTML = /* html */ `
   position: relative;
   transform-style: preserve-3d;
   transition: .6s .1s;
-  <!-- transform: rotateY(180deg); -->
 }
 
 /* hover and focus-within states */
-/*
-.flip-card-container:hover .flip-card,
-.flip-card-container:focus-within .flip-card {
+.flip-card-container:hover .flip-card {
   transform: rotateY(180deg);
 }
-*/
 
 /* .card-front */
 .card-front {
@@ -53,11 +49,6 @@ template.innerHTML = /* html */ `
   align-items: center;
 }
 
-.card-front {
-  transform: rotateY(0deg);
-  z-index: 2;
-}
-
 .card-front img {
   width: 60%;
 }
@@ -70,19 +61,15 @@ img[src*="roads_"] {
 .card-back {
   display: grid;
   grid-template-rows: auto auto 10%;
-  width: 20%;
-  height: 20%;
-  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
   background: white;
   overflow: hidden;
   backface-visibility: hidden;
   justify-self: center;
   text-align: center;
-}
-
-.card-back {
   transform: rotateY(180deg);
-  z-index: 1;
 }
 
 .social-icons {
@@ -94,17 +81,22 @@ img[src*="roads_"] {
   height: 100%;
 }
 
-/* hover state */
-.flip-card-container:hover .card-back {
-  width: 100%;
-  height: 100%;
+.filter-youtube {
+  filter: invert(19%) sepia(92%) saturate(5362%) hue-rotate(356deg) brightness(111%) contrast(122%);
 }
 
-.flip-card-container:hover .card-front .img-bg::before {
-  width: 6px;
-  border-left-color: var(--primary);
-  border-right-color: var(--primary);
+.filter-twitter {
+  filter: invert(57%) sepia(61%) saturate(4041%) hue-rotate(177deg) brightness(98%) contrast(93%);
 }
+
+.filter-facebook {
+  filter: invert(32%) sepia(26%) saturate(1386%) hue-rotate(183deg) brightness(92%) contrast(85%);
+}
+
+.filter-instagram {
+  filter: invert(48%) sepia(63%) saturate(7001%) hue-rotate(320deg) brightness(90%) contrast(96%);
+}
+
 </style>
 
 <div id ="firm"></div>
@@ -121,35 +113,47 @@ class Firms extends HTMLElement {
     this.setFirms();
   }
 
+  getSocialLinks = (links) =>
+    links
+      .map(({ url, icon }) => `<a href=${url}> ${this.getSocialIcon(icon)}</a>`)
+      .join("");
+
+  getSocialIcon = (icon) => {
+    if (icon.includes("facebook")) {
+      return `<img src='${icon}' class='filter-facebook'>`;
+    } else if (icon.includes("twitter")) {
+      return `<img src='${icon}' class='filter-twitter'>`;
+    } else if (icon.includes("instagram")) {
+      return `<img src='${icon}' class='filter-instagram'>`;
+    } else if (icon.includes("youtube")) {
+      return `<img src='${icon}' class='filter-youtube'>`;
+    } else {
+      return `<img src='${icon}'>`;
+    }
+  };
+
   setFirms() {
     this.shadowRoot.getElementById("firm").innerHTML = firms
       .map(
-        ({ name, url, thumbnail, info, links }) =>
+        ({ name, url, thumbnail, links }) =>
           /* html */
           `<div class="flip-card-container">
             <div class="flip-card">
-      
-              <a href= ${url}>
-                <div class="card-front">
-                  <img src= ${thumbnail}>
-                </div>
-              </a> 
-
-              <div class="card-back"> 
-                <p>${name}</p>
-                <p>${info}</p>
+              <div class="card-front">
+                <img src= ${thumbnail}>
+              </div>
               
+              <div class="card-back"> 
+                <a href= ${url}>
+                  <p>${name}</p>
+                </a> 
+                
                 <div class="social-icons">
-               ` +
-          links
-            .map(({ url, icon }) => `<a href=${url}> <img src='${icon}'></a>`)
-            .join("") +
-          /* html */ `
-          </div>
+                  ${this.getSocialLinks(links)}
+                </div>
               </div>
             </div>
-        </div>
-     `
+          </div>`
       )
       .join("");
   }
