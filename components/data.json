@@ -6,7 +6,8 @@
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
-      "secondary": ""
+      "secondary": "",
+      "accent": ""
     },
     "links": [
       {
@@ -26,7 +27,8 @@
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
-      "secondary": ""
+      "secondary": "",
+      "accent": ""
     },
     "links": [
       {
@@ -46,7 +48,8 @@
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
-      "secondary": ""
+      "secondary": "",
+      "accent": ""
     },
     "links": [
       {
@@ -66,7 +69,8 @@
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
-      "secondary": ""
+      "secondary": "",
+      "accent": ""
     },
     "links": [
       {
@@ -86,7 +90,8 @@
     "info": "Leergierige mannen en vrouwen met een afstand tot de arbeidsmarkt werken onder begeleiding van IT-professionals aan het gewenste eindproduct. Zo maken wij IT weer menselijk.",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
-      "secondary": "#00aeef"
+      "secondary": "#00aeef",
+      "accent": "#0098d1"
     },
     "links": [
       {
@@ -114,7 +119,8 @@
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
-      "secondary": ""
+      "secondary": "",
+      "accent": ""
     },
     "links": [
       {
@@ -134,7 +140,8 @@
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
-      "secondary": "#fd1515"
+      "secondary": "#fd1515",
+      "accent": ""
     },
     "links": [
       {
@@ -154,7 +161,8 @@
     "info": "Test",
     "colors": {
       "primary": "https://roads.nl/documents/2017/09/roads-footer.jpg",
-      "secondary": ""
+      "secondary": "",
+      "accent": ""
     },
     "links": [
       {

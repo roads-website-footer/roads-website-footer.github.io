@@ -6,7 +6,6 @@ template.innerHTML = /* html */ `
 /* Hover over a card to flip, can tab too. */
 /* firm */
 #firm {
-  min-height: 20vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -17,9 +16,7 @@ template.innerHTML = /* html */ `
 .flip-card-container {
   width: 220px;
   height: 150px;
-  margin: 4px;
-  perspective: 1000px;
-  display: inline-block;
+  padding: .5em;
 }
 
 /* .flip-card */

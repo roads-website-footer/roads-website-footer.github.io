@@ -37,22 +37,25 @@ class Link extends HTMLElement {
 
   getCurrentYear = () => new Date().getFullYear();
 
-  getFirmName = () => {
-    let name = "";
+  getFirm = () => {
+    let currentFirm = "";
 
     firms.map((firm) => {
       if (firm.url === window.location.origin) {
-        name = firm.name;
+        currentFirm = firm;
       } else {
-        name = "Roads Technology";
+        // return default firm
+        currentFirm = firms[4];
       }
     });
 
-    return name;
+    return currentFirm;
   };
 
-  getCopyright = () =>
-    `<span class="copyright">&#169; ${this.getCurrentYear()} ${this.getFirmName()}</span>`;
+  getCopyright = (firm) =>
+    `<span class="copyright">&#169; ${this.getCurrentYear()} <a href=${
+      firm.url
+    }>${firm.name}</a></span>`;
 
   setLinks = () => {
     const links = [
@@ -69,7 +72,7 @@ class Link extends HTMLElement {
         if (index === link.length) {
           linkBuilder = `<a href='/${link[1]}'>${
             link[0]
-          }</a><span class="seperator">|</span>${this.getCopyright()}`;
+          }</a><span class="seperator">|</span>${this.getCopyright(this.getFirm())}`;
         } else {
           linkBuilder = `<a href='/${link[1]}'>${link[0]}</a><span class="seperator">|</span>`;
         }
@@ -77,7 +80,7 @@ class Link extends HTMLElement {
         return linkBuilder;
       })
       .join("");
-  }
+  };
 }
 
 window.customElements.define("roads-links", Link);

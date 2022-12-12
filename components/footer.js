@@ -8,8 +8,8 @@ template.innerHTML = /* html */ `
     flex-direction: column;
     align-items: left;
     margin-bottom: 3px;
-    padding-top: 1em;
-    padding-left: 3em;
+    padding-top: .5em;
+    padding-left: 1em;
     background-color: grey; 
     font-family: "Palanquin Dark", Arial, Helvetica, Verdana, sans-serif;
     font-size: 14px;
@@ -21,7 +21,6 @@ template.innerHTML = /* html */ `
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 3px;
     padding-top: 1em;
     padding-bottom: 1em;
     background-color: grey; 
@@ -38,7 +37,7 @@ template.innerHTML = /* html */ `
     background-color: grey; 
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
-    color: #353535;
+    color: #0098d1;
     line-height: 28px
   }
 </style>
@@ -66,6 +65,7 @@ class RoadsFooter extends HTMLElement {
 
   getFirmColor = () => {
     let color;
+
     firms.map((firm) => {
       if (firm.url === window.location.origin) {
         color = firm.colors;
@@ -73,6 +73,7 @@ class RoadsFooter extends HTMLElement {
         color = firms[4].colors;
       }
     });
+
     return color;
   };
 
@@ -88,14 +89,14 @@ class RoadsFooter extends HTMLElement {
   };
 
   setStyle = () => {
-    const { primary, secondary } = this.getFirmColor();
+    const { primary, secondary, accent } = this.getFirmColor();
     const titleStyle = this.shadowRoot.getElementById("title").style;
     const footerStyle = this.shadowRoot.getElementById("footer").style;
     const infoStyle = this.shadowRoot.getElementById("info").style;
 
     this.setBackgroundColor(primary, titleStyle);
-    this.setBackgroundColor(primary, footerStyle);
-    this.setBackgroundColor(secondary, infoStyle);
+    this.setBackgroundColor(secondary, footerStyle);
+    this.setBackgroundColor(accent, infoStyle);
   };
 }
 
